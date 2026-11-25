@@ -18,7 +18,7 @@ test:
 
 synth:
 	uv run python scripts/make_synthetic_data.py
-	@echo "synth target: implement gold build in phase 1.2"
+	uv run python -c "from mizaj.data.gold_build import build_gold; print(build_gold())"
 
 dev:
 	@echo "Start api and web with: make api (terminal 1) and make web (terminal 2)"
