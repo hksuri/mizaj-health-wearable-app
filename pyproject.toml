@@ -1,0 +1,36 @@
+[project]
+name = "mizaj-workspace"
+version = "0.1.0"
+description = "Mizaj health wearable chatbot workspace"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["apps/api", "packages/ingest"]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.8",
+  "pyright>=1.1",
+  "pre-commit>=4.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["apps/api/src", "packages/ingest/src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pyright]
+pythonVersion = "3.12"
+venvPath = "."
+venv = ".venv"
+include = ["apps/api/src", "packages/ingest/src", "tests", "scripts"]
+typeCheckingMode = "basic"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["apps/api/src", "packages/ingest/src"]
