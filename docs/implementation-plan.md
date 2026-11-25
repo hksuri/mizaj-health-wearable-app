@@ -1,8 +1,10 @@
-# Health Trends Chatbot — Implementation Plan
+# Mizaj — Implementation Plan
 
 Status: draft for review  
 Upstream: [hld.md](hld.md), [lld.md](lld.md)  
 Index: [PLAN.md](../PLAN.md)
+
+**Product name:** Mizaj (HLD D20). Python package `mizaj`; UI and README use Mizaj.
 
 Coding agents execute tasks in order within each phase. Every task cites the HLD decision and LLD section it implements. Do not invent contracts; update HLD/LLD (and an ADR if needed) first.
 

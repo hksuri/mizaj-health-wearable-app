@@ -1,8 +1,10 @@
-# Health Trends Chatbot — Low-Level Design
+# Mizaj — Low-Level Design
 
 Status: draft for review  
-Upstream: [hld.md](hld.md) (decisions D1–D19)  
+Upstream: [hld.md](hld.md) (decisions D1–D20)  
 Downstream: [implementation-plan.md](implementation-plan.md)
+
+**Product name:** Mizaj (HLD D20).
 
 This document freezes contracts. Implementers must not invent schemas, errors, or state transitions missing here. Unknowns that depend on a live Google Health response are marked **freeze-after-sample**.
 
@@ -20,7 +22,7 @@ Follow [Set up Google Cloud and OAuth](https://developers.google.com/health/setu
 2. Google Cloud project with Google Health API enabled.
 3. OAuth consent screen: External, publishing status Testing; add the operator email under Test users.
 4. OAuth 2.0 Client ID: application type **Web application**; authorized redirect URI as configured in Cloud Console (quick-setup docs use `https://www.google.com`).
-5. Download client credentials JSON to a path outside the repo (e.g. `~/.config/healthchat/client_secret.json`). Never commit it.
+5. Download client credentials JSON to a path outside the repo (e.g. `~/.config/mizaj/client_secret.json`). Never commit it.
 
 ### `ingest auth` behavior
 
@@ -36,7 +38,7 @@ Follow [Set up Google Cloud and OAuth](https://developers.google.com/health/setu
    - `prompt=consent` when obtaining a new refresh token or changing scopes
 3. Capture the authorization code via the documented redirect (implementation may use a short-lived local listener that receives the browser redirect if the Console redirect is set to a localhost URI, or an operator-pasted redirect URL). Exact capture UX is an implementation detail; the resulting code exchange must hit `https://oauth2.googleapis.com/token`.
 4. Persist refresh token (and optional access token expiry metadata) in the OS keychain via `keyring`:
-   - Service: `healthchat-google-health`
+   - Service: `mizaj-google-health`
    - Username: Google account email or stable `healthUserId` after identity check
 5. Call `GET https://health.googleapis.com/v4/users/me/identity`. On `400 ACCOUNT_NOT_LINKED`, exit with a clear message to complete Google Health app linking; do not mark auth as successful.
 6. Exit 0 only when a refresh token is stored and identity succeeds.
@@ -195,7 +197,7 @@ Primary key: `session_id`.
 
 ### Transform contract
 
-- Versioned SQL files under `apps/api/src/healthchat/data/queries/` (and/or `packages/ingest/.../gold/`).
+- Versioned SQL files under `apps/api/src/mizaj/data/queries/` (and/or `packages/ingest/.../gold/`).
 - `ingest build`: (1) build silver if needed, (2) create/replace tables in `data/_staging/health.duckdb`, (3) run SQL, (4) **atomic publish**.
 
 ### Atomic publish (HLD D12)
@@ -221,7 +223,7 @@ CI and committed evals use only this persona (`persona: synthetic_v1`).
 
 ## B1. Metric registry
 
-Module: `apps/api/src/healthchat/agent/metrics_registry.py`
+Module: `apps/api/src/mizaj/agent/metrics_registry.py`
 
 Each entry:
 
@@ -363,7 +365,7 @@ Bind: `127.0.0.1`.
 - Light and dark themes on chat, `/annotate`, and `/review`.
 - Visual reference: [`docs/mockups/mizaj-ui/`](mockups/mizaj-ui/) — `Main`, `ChatEmpty`, `Annotate`, `Review`, `Sidebar`, plus `*Dark` variants.
 - Toggle in the shared app chrome (e.g. header). Choices: `light` | `dark`; if unset, follow `prefers-color-scheme`.
-- Persist override in `localStorage` key `healthchat-theme`.
+- Persist override in `localStorage` key `mizaj-theme`.
 - Apply via `class="dark"` on `<html>` (Tailwind dark mode) or equivalent CSS variables; charts and tool-activity chips must use theme-aware colors (no hard-coded light-only strokes).
 - No server round-trip for theme; pure client preference.
 
