@@ -1,0 +1,12 @@
+.DS_Store
+data/
+*.duckdb
+*.parquet
+.env
+.venv/
+node_modules/
+__pycache__/
+.pytest_cache/
+.next/
+dist/
+*.egg-info/
