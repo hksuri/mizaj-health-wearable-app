@@ -361,6 +361,7 @@ Bind: `127.0.0.1`.
 ### Web UI theme (HLD D19)
 
 - Light and dark themes on chat, `/annotate`, and `/review`.
+- Visual reference: [`docs/mockups/mizaj-ui/`](mockups/mizaj-ui/) — `Main`, `ChatEmpty`, `Annotate`, `Review`, `Sidebar`, plus `*Dark` variants.
 - Toggle in the shared app chrome (e.g. header). Choices: `light` | `dark`; if unset, follow `prefers-color-scheme`.
 - Persist override in `localStorage` key `healthchat-theme`.
 - Apply via `class="dark"` on `<html>` (Tailwind dark mode) or equivalent CSS variables; charts and tool-activity chips must use theme-aware colors (no hard-coded light-only strokes).

@@ -243,8 +243,8 @@ Each entry: context → decision → alternatives → consequences → status.
 
 ### D19 — Light / dark mode
 
-- **Context:** Chat, annotate, and review UIs should be comfortable for long labeling sessions and night use.
-- **Decision:** Next.js web app supports **light and dark** themes with a visible toggle. Default follows the OS `prefers-color-scheme`; user override persists in `localStorage`. Charts (Recharts) and SSE tool chips use theme tokens so both modes stay readable. No separate “system-only” mode without a manual override.
+- **Context:** Chat, annotate, and review UIs should be comfortable for long labeling sessions and night use. Visual reference lives in `docs/mockups/mizaj-ui/` (light + `*Dark` artboards).
+- **Decision:** Next.js web app supports **light and dark** themes with a visible toggle. Default follows the OS `prefers-color-scheme`; user override persists in `localStorage`. Charts (Recharts) and SSE tool chips use theme tokens so both modes stay readable. No separate “system-only” mode without a manual override. Implement against the committed mockups for layout and palette.
 - **Alternatives:** Light-only; dark-only; OS-follow with no toggle.
 - **Consequences:** Tailwind/CSS variables (or shadcn theme) define paired palettes; annotate/review share the same shell as chat.
 - **Status:** locked

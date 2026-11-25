@@ -75,7 +75,8 @@ Synthetic cut line: if Google OAuth stalls (tasks 1.3–1.4), continue with synt
 - **HLD / LLD:** D1, D10, D13, D19 · LLD B4 ChartSpec / SSE / theme
 - **Depends on:** 1.6
 - **Creates:** Next.js chat page, SSE client, tool chips, Recharts from `ChartSpec`, light/dark theme toggle (OS default + `localStorage` override), OpenAPI-generated types if pipeline ready
-- **Acceptance:** "plot my steps by week" shows a correct chart against synthetic or real gold; theme toggle switches light/dark and survives reload; chart readable in both modes
+- **UI reference:** [`docs/mockups/mizaj-ui/`](mockups/mizaj-ui/) (`Main`, `ChatEmpty`, `Sidebar`, light/dark)
+- **Acceptance:** "plot my steps by week" shows a correct chart against synthetic or real gold; theme toggle switches light/dark and survives reload; chart readable in both modes; layout matches mockups in spirit (not pixel-perfect required)
 - **Docs:** README screenshots from synthetic only (D15) — include one light and one dark if practical
 
 ### 1.8 README v1

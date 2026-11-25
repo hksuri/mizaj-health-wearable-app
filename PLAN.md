@@ -15,8 +15,9 @@ Success criteria, non-goals, architecture, contracts, and task sequencing live i
 | [docs/hld.md](docs/hld.md) | High-level design: context, containers, decision log (D1–D19), v1 scope, risks |
 | [docs/lld.md](docs/lld.md) | Low-level design: ingest/auth, silver/gold schemas, tools, SSE, SQLite, evals |
 | [docs/implementation-plan.md](docs/implementation-plan.md) | Phased build tasks with acceptance criteria citing HLD/LLD |
+| [docs/mockups/](docs/mockups/) | UI mockups (chat, annotate, review; light/dark) — visual source for the web app |
 
-Do not invent schemas, errors, or stack choices missing from those docs. If a contract is wrong, update HLD/LLD (and an ADR) before coding.
+Do not invent schemas, errors, or stack choices missing from those docs. If a contract is wrong, update HLD/LLD (and an ADR) before coding. Match [docs/mockups/mizaj-ui/](docs/mockups/mizaj-ui/) for UI layout and theme.
 
 ## Locked stack
 

@@ -1,0 +1,124 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1160,
+      "title": "Chat — conversation · light",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "ChatEmpty.dc.html",
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 960,
+      "title": "Chat — new chat · light",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Annotate.dc.html",
+      "x": 3040,
+      "y": 0,
+      "w": 1440,
+      "h": 960,
+      "title": "Annotate · light",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Review.dc.html",
+      "x": 4560,
+      "y": 0,
+      "w": 1440,
+      "h": 960,
+      "title": "Review · light",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "MainDark.dc.html",
+      "x": 0,
+      "y": 1560,
+      "w": 1440,
+      "h": 1160,
+      "title": "Chat — conversation · dark",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "ChatEmptyDark.dc.html",
+      "x": 1520,
+      "y": 1560,
+      "w": 1440,
+      "h": 960,
+      "title": "Chat — new chat · dark",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "AnnotateDark.dc.html",
+      "x": 3040,
+      "y": 1560,
+      "w": 1440,
+      "h": 960,
+      "title": "Annotate · dark",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "ReviewDark.dc.html",
+      "x": 4560,
+      "y": 1560,
+      "w": 1440,
+      "h": 960,
+      "title": "Review · dark",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Sidebar.dc.html",
+      "x": 0,
+      "y": 3120,
+      "w": 264,
+      "h": 900,
+      "title": "Sidebar (shared component)"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "light",
+      "x": 0,
+      "y": -300,
+      "w": 240,
+      "maxW": 6000,
+      "text": "Light",
+      "kind": "title1"
+    },
+    {
+      "id": "dark",
+      "x": 0,
+      "y": 1260,
+      "w": 240,
+      "maxW": 6000,
+      "text": "Dark",
+      "kind": "title1"
+    },
+    {
+      "id": "comp",
+      "x": 0,
+      "y": 2820,
+      "w": 240,
+      "maxW": 6000,
+      "text": "Shared components",
+      "kind": "title1"
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
