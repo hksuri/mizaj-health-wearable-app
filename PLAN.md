@@ -1,10 +1,12 @@
-# Health Trends Chatbot — Plan Index
+# Mizaj — Plan Index
 
 Audience: coding agents. Read this file first, then the design docs it points to. Where this plan and the official Google Health API or Claude API docs disagree, the docs win; record the difference in `docs/adr/`.
 
+**Product name:** Mizaj (repo: `mizaj-health-wearable-app`).
+
 ## Goal
 
-A personal chatbot for one user's Fitbit / Google Health wearable data: plain-language questions about trends, typed tools over local gold tables, streamed text answers, and charts when useful. Second deliverable: an evaluation harness (v1: **100** scenarios, human annotation UI, LLM judge, Cohen's kappa; stretch to 500 later).
+Mizaj is a personal chatbot for one user's Fitbit / Google Health wearable data: plain-language questions about trends, typed tools over local gold tables, streamed text answers, and charts when useful. Second deliverable: an evaluation harness (v1: **100** scenarios, human annotation UI, LLM judge, Cohen's kappa; stretch to 500 later).
 
 Success criteria, non-goals, architecture, contracts, and task sequencing live in the docs below — not in this index.
 
@@ -12,7 +14,7 @@ Success criteria, non-goals, architecture, contracts, and task sequencing live i
 
 | Doc | Role |
 | --- | --- |
-| [docs/hld.md](docs/hld.md) | High-level design: context, containers, decision log (D1–D19), v1 scope, risks |
+| [docs/hld.md](docs/hld.md) | High-level design: context, containers, decision log (D1–D20), v1 scope, risks |
 | [docs/lld.md](docs/lld.md) | Low-level design: ingest/auth, silver/gold schemas, tools, SSE, SQLite, evals |
 | [docs/implementation-plan.md](docs/implementation-plan.md) | Phased build tasks with acceptance criteria citing HLD/LLD |
 | [docs/mockups/](docs/mockups/) | UI mockups (chat, annotate, review; light/dark) — visual source for the web app |

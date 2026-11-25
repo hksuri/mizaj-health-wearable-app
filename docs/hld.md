@@ -1,15 +1,17 @@
-# Health Trends Chatbot — High-Level Design
+# Mizaj — High-Level Design
 
 Status: draft for review  
 Audience: design reviewer, then coding agents after acceptance  
 Source: [PLAN.md](../PLAN.md)  
 Downstream: [lld.md](lld.md), [implementation-plan.md](implementation-plan.md)
 
+**Product name:** Mizaj.
+
 Where this document and the official Google Health API or Claude API docs disagree, the docs win. Record the difference in `docs/adr/` and update the decision log here.
 
 ## 1. Purpose
 
-A personal chatbot for one user's Fitbit / Google Health wearable data. The user asks questions about health trends in plain language. The system looks the data up with typed tools, answers in text, and returns a chart when it helps.
+Mizaj is a personal chatbot for one user's Fitbit / Google Health wearable data. The user asks questions about health trends in plain language. The system looks the data up with typed tools, answers in text, and returns a chart when it helps.
 
 A second deliverable is an evaluation harness: LLM-generated scenarios (v1 target **100**, scale to 500 later), human annotation through a hotkey UI, an LLM judge, and agreement metrics (Cohen's kappa).
 
@@ -249,6 +251,14 @@ Each entry: context → decision → alternatives → consequences → status.
 - **Consequences:** Tailwind/CSS variables (or shadcn theme) define paired palettes; annotate/review share the same shell as chat.
 - **Status:** locked
 
+### D20 — Product name
+
+- **Context:** Docs mixed “Health Trends Chatbot” with mockups branded Mizaj.
+- **Decision:** The product is **Mizaj**. UI chrome, README, package/module names, and user-facing copy use Mizaj. Repo: `mizaj-health-wearable-app`.
+- **Alternatives:** Keep “Health Trends” as the product name; Mizaj as a codename only.
+- **Consequences:** Python package `mizaj`, keyring service `mizaj-google-health`, `localStorage` key `mizaj-theme`, config under `~/.config/mizaj/`.
+- **Status:** locked
+
 ## 5. Conceptual data model (v1)
 
 | Layer | Content | Rules |
@@ -330,6 +340,7 @@ Mapped Google Health data types that inform v1 (field freeze after first sample)
 | SwiftUI client in phase 5? | Out of first three build phases; remains stretch in implementation plan. |
 | Takeout if API history is short? | Acceptable as post-measurement ADR fallback (D16); not in LLD v1. |
 | 500 vs smaller eval set for first labeling pass? | **100** for phase 2/3; **500** is a later stretch (D18). |
+| Product name? | **Mizaj** (D20). |
 
 ## 11. References
 
