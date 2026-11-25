@@ -17,4 +17,5 @@ data/*
 !data/.gitkeep
 *.duckdb
 *.parquet
+!tests/fixtures/**/*.parquet
 apps/web/out/
